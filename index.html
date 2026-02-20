@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovateHacks 2026 | Canada's Premier Hackathon</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-bg="var(--bg-hero)">
+
+    <nav>
+        <a href="#" class="logo">UMake</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#themes">Themes</a>
+            <a href="#faq">FAQ</a>
+            <a href="#sponsors">Sponsors</a>
+            <!-- <a href="#contact">Contact</a> -->
+        </div>
+    </nav>
+
+    <section id="hero" class="bg-trigger" data-color="var(--bg-hero)">
+        <span class="hero-tag">MARCH 6-7, 2026</span>
+        <h1>BUILD THE FUTURE.</h1>
+        <p class="hero-sub">Join 500+ makers, engineers, and designers for a 2-day hardware marathon.</p>
+        <a href="#" class="cta-btn">Register</a>
+    </section>
+
+    <section id="about" class="bg-trigger" data-color="var(--bg-about)">
+        <h2 class="section-title">What is a Make·a·thon?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Hardware First</h3>
+                <p>Unlike traditional hackathons, we provide sensors, microcontrollers, and tools to help you build physical devices that solve real-world problems.</p>
+            </div>
+            <div class="card">
+                <h3>Collaborate</h3>
+                <p>Form a team of 2-4 and work alongside mentors from top tech companies to bring your wildest prototypes to life.</p>
+            </div>
+            <div class="card">
+                <h3>Win Big</h3>
+                <p>Over $10,000 in hardware prizes, internships, and the chance to showcase your project to industry leaders.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="themes" class="bg-trigger" data-color="var(--bg-themes)">
+        <h2 class="section-title">2026 Themes</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>St. Patricks Day</h3>
+                <p>Create tech that reduces carbon footprints or manages resources more efficiently in urban environments.</p>
+            </div>
+            <div class="card">
+                <h3>Retro-Gaming</h3>
+                <p>Build custom arcade machines, controllers, or physical games that bridge the gap between digital and physical play.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="bg-trigger" data-color="var(--bg-faq)">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-item">
+            <div class="faq-question">Who can apply?</div>
+            <p class="text-dim">Any student currently enrolled in a post-secondary institution. We welcome beginners and veterans alike!</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What if I don't have hardware?</div>
+            <p class="text-dim">No problem! We have a dedicated hardware lab where you can sign out everything from Arduinos to 3D printers.</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is it free?</div>
+            <p class="text-dim">Yes! Admission, hardware rentals, food, and swag are all completely free for accepted hackers.</p>
+        </div>
+    </section>
+
+    <section id="sponsors" class="bg-trigger" data-color="var(--bg-footer)">
+        <h2 class="section-title">Sponsors</h2>
+        <div class="grid" style="text-align: center; opacity: 0.5;">
+            <div class="card"><h3>LOGO 1</h3></div>
+            <div class="card"><h3>LOGO 2</h3></div>
+            <div class="card"><h3>LOGO 3</h3></div>
+            <div class="card"><h3>LOGO 4</h3></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 UMIEEE. All Rights Reserved.</p>
+        <div class="socials">
+            <a href="#">Instagram</a>
+            <!-- <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a> -->
+            <a href="#">Email</a>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * Background Change on Scroll Logic
+         * Using Intersection Observer for high performance
+         */
+        const sections = document.querySelectorAll('.bg-trigger');
+        const body = document.body;
+
+        const options = {
+            root: null,
+            threshold: 0.4, // Changes when 40% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const color = entry.target.getAttribute('data-color');
+                    body.style.backgroundColor = color;
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
