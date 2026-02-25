@@ -3,7 +3,7 @@
     --bg-hero: #0261a0;
     --bg-about: #003d66;
     --bg-themes: #004b7c;
-    --bg-faq: #005c99;
+    --bg-faq: #072f49;
     --bg-footer: #0261a0;
     
     --accent-blue: #3b82f6;
@@ -56,11 +56,19 @@ nav {
 }
 
 .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    /* font-weight: 800; */
     font-size: 1.5rem;
     color: var(--accent-yellow);
     text-decoration: none;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px  1px 0 #000,
+        1px  1px 0 #000;
 }
 
 .nav-links {
@@ -186,9 +194,14 @@ section {
 
 /* FAQ Styling */
 .faq-item {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.0rem;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+    /* padding-bottom: 1.5rem; */
+    padding: 1.5rem 2.0rem;
+
+    background: #003d66d0;
+    border: 1px solid #ffffff40;
+    border-radius: 20px;
 }
 
 .faq-question {
@@ -204,7 +217,8 @@ section {
 footer {
     color: var(--text-dim);
     padding: 4rem 10%;
-    background: var(--bg-footer);
+    /* background: var(--bg-footer); */
+    background: #04426b;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }

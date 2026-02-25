@@ -34,7 +34,8 @@ const SETTINGS = {
     voxelCount: 50,         // Increase this to fill the larger grid
     gridOpacity: 0.08,      // How visible the floor grid is (0 to 1)
     moveSpeed: 0.06,        // Speed of the roll animation (higher = faster)
-    maxWaitTime: 4000,      // Max milliseconds a voxel waits before moving
+    minWaitTime: 2000,
+    maxWaitTime: 12000,      // Max milliseconds a voxel waits before moving
     shadingIntensity: 0.8,  // Contrast: 1.0 is high contrast, 0.1 is very flat
     spawnRange: 90,         // How far out voxels can spawn/travel
     colors: [0xFFC72C, 0x3b82f6, 0xffffff] // Yellow, Blue, White
@@ -97,7 +98,7 @@ class RollingVoxel {
             Math.floor((Math.random() - 0.5) * r)
         );
         this.mesh.rotation.set(0, 0, 0);
-        this.waitTimer = Math.random() * SETTINGS.maxWaitTime;
+        this.waitTimer = SETTINGS.minWaitTime + Math.random() * (SETTINGS.maxWaitTime - SETTINGS.minWaitTime);
         this.isMoving = false;
     }
 
